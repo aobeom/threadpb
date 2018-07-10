@@ -33,6 +33,9 @@ class threadProcBar(object):
             return percent
 
     def worker(self):
+        process_bar = '[' + '>' * 0 + '-' * 0 + ']' + '%.2f' % 0 + '%' + '\r'
+        sys.stdout.write(process_bar)
+        sys.stdout.flush()
         pool = self.p
         for i, task in enumerate(self.tasks):
             try:
